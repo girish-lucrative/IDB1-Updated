@@ -489,7 +489,7 @@ class CertificateBot:
                     print(f"✅ Finished all date ranges for port: {location_code}")
                 
                 print("\n🎯 All ports processed successfully.")
-                return {"success": True, "message": "All ports processed successfully"}
+                # return {"success": True, "message": "All ports processed successfully"}
             else:
                 time.sleep(2)
     
@@ -1288,8 +1288,7 @@ class CertificateBot:
             # winsound.Beep(1000, 1000)  
             try:
                 WebDriverWait(self.driver, 100).until(
-                    EC.element_to_be_clickable((By.XPATH, "//ul[@class='navigation relative-nav']//a[@title='Home']//*[name()='svg']//*[name()='path' and contains(@d,'M280.37 14')]"))).click()
-                    
+                EC.element_to_be_clickable((By.XPATH, "(//*[name()='svg'][@role='img'])[1]"))).click()
                 print("click home")
             except:
                 
